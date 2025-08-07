@@ -1,5 +1,7 @@
 //Person.java
-package Hospital;
+package Hospital.core;
+
+import static Hospital.util.generateId.nextId;
 
 public abstract class Person {
     protected String firstName;
@@ -10,7 +12,7 @@ public abstract class Person {
     public Person(String firstName, String lastName, String prefix) {
         this.firstName = firstName;
         this.lastName = lastName;   
-        this.id = Hospital.Clinic.generateId(prefix);
+        this.id = nextId(prefix);
     }
 
     public void setFirstName(String name){ this.firstName = name; }
@@ -22,6 +24,4 @@ public abstract class Person {
     public String toString() {
         return "{Name=" + getFullName() + ", ID=" + id + "}";
     }
-
-
 }

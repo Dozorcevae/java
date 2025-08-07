@@ -1,11 +1,11 @@
 //Appointment.java
-package Hospital.Utils;
+package Hospital.util;
 
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
-import Hospital.Clinic;
-import Hospital.Employee;
-import Hospital.Patient;
+
+import Hospital.core.*;
+import static Hospital.util.generateId.nextId;
 
 public class Appointment {
     private final String id;
@@ -14,7 +14,7 @@ public class Appointment {
     private final LocalDateTime dateTime;
 
     public Appointment(Patient patient, Employee doctor, LocalDateTime dateTime) {
-        this.id = Clinic.generateId("A");
+        this.id = nextId("A");
         this.patient = patient;
         this.doctor = doctor;
         this.dateTime = dateTime;

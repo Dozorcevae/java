@@ -1,7 +1,8 @@
 //Nurse.java
-package Hospital.Employees;
+package Hospital.staff;
 
-import Hospital.Employee;
+import Hospital.core.*;
+
 
 public class Nurse extends Employee {
     private String department;

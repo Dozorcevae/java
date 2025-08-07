@@ -1,24 +1,34 @@
 //Clinic.java
 package Hospital;
 
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 
-import Hospital.Employees.Doctor;
-//import Hospital.Employees.Nurse;
-import Hospital.Utils.Appointment;
+import Hospital.core.*;
+import Hospital.staff.*;
+import Hospital.util.*;
+
 
 public class Clinic {
     public static void main(String[] args) {
-        Patient p = new Patient("Анна", "Иванова");
-        Doctor d = new Doctor("Игорь", "Смирнов", "Терапевт", 50000);
-        
-        LocalDateTime dt = LocalDateTime.of(2025, 8, 10, 14, 30);
-        Appointment appointment = new Appointment(p, d, dt);
-        
-        System.out.println(appointment);
-    }
+        Patient patient = new Patient("Елена", "Иванова");
+        MedicalRecord record = new MedicalRecord(patient.getId());
 
-    public static String generateId(String prefix) {
-        return prefix + System.nanoTime(); // Уникальнее, чем currentTimeMillis
+        visit firstVisit = new visit(
+            LocalDate.of(2025, 8, 5),
+            "Пациент жалуется на головную боль.",
+            "Парацетамол 500мг 2 раза в день.",
+            LocalDate.of(2025, 8, 12)
+        );
+
+        record.addVisit(firstVisit);
+
+        // Вывести все посещения
+        for (visit v : record.getVisits()) {
+            System.out.println("Дата: " + v.getVisitDate());
+            System.out.println("Назначения: " + v.getPrescriptions());
+            System.out.println("Следующий визит: " + v.getNextVisitDate());
+        }
+
     }
 }

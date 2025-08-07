@@ -1,5 +1,5 @@
 //Employee.java
-package Hospital;
+package Hospital.core;
 
 public abstract class Employee extends Person {
     protected String position;

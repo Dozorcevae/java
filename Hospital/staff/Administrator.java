@@ -1,7 +1,7 @@
 //Administrator.java
-package Hospital.Employees;
+package Hospital.staff;
 
-import Hospital.Employee;
+import Hospital.core.Employee;
 
 public class Administrator extends Employee {
 

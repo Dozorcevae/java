@@ -1,5 +1,5 @@
 //Patient.java
-package Hospital;
+package Hospital.core;
 
 public class Patient extends Person {
 
